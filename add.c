@@ -2,9 +2,13 @@
 
 /**
  * add - adds the top two elements of the stack
- * Return: EXIT_SUCCESS on success.
+ * @stack: stack
+ * @line_number: line number
+ * Return: NONE
  */
-int add()
+void add(stack_t **stack, unsigned int line_number)
 {
-    return (EXIT_SUCCESS);
+    printf("adding on stack\n");
+    stack = stack;
+    line_number = line_number;
 }

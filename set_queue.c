@@ -1,13 +1,14 @@
 #include "monty.h"
 
 /**
- * nop - dont do anything
+ * set_queue - sets the format of the data to a queue (FIFO).
  * @stack: stack
  * @line_number: line number
  * Return: NONE
  */
-void nop(stack_t **stack, unsigned int line_number)
+void set_queue(stack_t **stack, unsigned int line_number)
 {
+    common.type = 1;
     return;
     
     /* overcome unused attribute warning */

@@ -2,9 +2,13 @@
 
 /**
  * push - push integer to stack
- * Return: EXIT_SUCCESS on success.
+ * @stack: stack
+ * @line_number: line number
+ * Return: NONE
  */
-int push()
+void push(stack_t **stack, unsigned int line_number)
 {
-    return (EXIT_SUCCESS);
+    printf("pushing %d to stack\n", line_number);
+    stack = stack;
+    line_number = line_number;
 }

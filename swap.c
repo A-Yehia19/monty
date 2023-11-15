@@ -2,9 +2,13 @@
 
 /**
  * swap - swaps the top two elements of the stack
- * Return: EXIT_SUCCESS on success.
+ * @stack: stack
+ * @line_number: line number
+ * Return: NONE
  */
-int swap()
+void swap(stack_t **stack, unsigned int line_number)
 {
-    return (EXIT_SUCCESS);
+    printf("swaping stack\n");
+    stack = stack;
+    line_number = line_number;
 }

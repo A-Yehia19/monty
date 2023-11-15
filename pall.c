@@ -2,9 +2,13 @@
 
 /**
  * pall - print the content of stack
- * Return: EXIT_SUCCESS on success.
+ * @stack: stack
+ * @line_number: line number
+ * Return: NONE
  */
-int pall()
+void pall(stack_t **stack, unsigned int line_number)
 {
-    return (EXIT_SUCCESS);
+    printf("printing stack\n");
+    stack = stack;
+    line_number = line_number;
 }

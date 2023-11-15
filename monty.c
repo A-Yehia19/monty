@@ -1,5 +1,7 @@
 #include "monty.h"
 
+shared common = {0, {NULL}, 0};
+
 /**
  * main -
  * @argc: number of arguments
@@ -11,8 +13,10 @@ int main(int argc, char **argv)
 	FILE *file;
 	char *line = NULL;
 	size_t len = 0;
-	int line_number = 0, tokens_len = 0;
-	char *tokens[BUFSIZ] = {NULL};
+	unsigned int line_number = 0;
+
+	/* initialize stack */
+	stack_t *stack = NULL;
 
 	if (argc != 2)
 	{
@@ -30,16 +34,17 @@ int main(int argc, char **argv)
 	while (getline(&line, &len, file) != -1)
 	{
 		line_number++;
-		tokens[tokens_len] = strtok(line, " \n\t");
-		while (tokens[tokens_len] != NULL)
+		common.tokens[common.tokens_len] = strtok(line, " \n\t");
+		while (common.tokens[common.tokens_len] != NULL)
 		{
-			tokens_len++;
-			tokens[tokens_len] = strtok(NULL, " \n\t");
+			common.tokens_len++;
+			common.tokens[common.tokens_len] = strtok(NULL, " \n\t");
 		}
-		excute_command(tokens, tokens_len, line_number);
-		tokens_len = 0;
+		excute_command(line_number, &stack);
+		common.tokens_len = 0;
 	}
-	free(*tokens);
+	free_stack(&stack);
+	free(common.tokens[0]);
 	fclose(file);
 	return (EXIT_SUCCESS);
 }
