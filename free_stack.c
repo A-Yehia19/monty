@@ -3,9 +3,9 @@
 /**
  * free_stack - free the stack
  * @stack: stack
- * Return: EXIT_SUCCESS.
+ * Return: NONE
  */
-int free_stack(stack_t **stack)
+void free_stack(stack_t **stack)
 {
 	stack_t *tmp = NULL;
 
@@ -15,5 +15,4 @@ int free_stack(stack_t **stack)
 		*stack = (*stack)->next;
 		free(tmp);
 	}
-	return (EXIT_SUCCESS);
 }

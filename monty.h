@@ -61,8 +61,8 @@ shared common;
 
 
 
-int excute_command(int line_number, stack_t **stack);
-int free_stack(stack_t **stack);
+void excute_command(int line_number, stack_t **stack);
+void free_stack(stack_t **stack);
 void set_queue(stack_t **stack, unsigned int line_number);
 void set_stack(stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number);

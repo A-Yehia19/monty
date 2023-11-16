@@ -4,9 +4,9 @@
  * excute_command - excute the command
  * @line_number: line number
  * @stack: stack
- * Return: EXIT_SUCCESS on success.
+ * Return: NONE
  */
-int excute_command(int line_number, stack_t **stack)
+void excute_command(int line_number, stack_t **stack)
 {
 	int i, ln;
 	instruction_t opcodes[] = {
@@ -23,19 +23,18 @@ int excute_command(int line_number, stack_t **stack)
 	};
 
 	if (common.tokens_len == 0 || common.tokens[0][0] == '#')
-		return (EXIT_FAILURE);
+		return;
 
 	for (i = 0; opcodes[i].opcode; i++)
 	{
 		if (strcmp(common.tokens[0], opcodes[i].opcode) == 0)
 		{
 			opcodes[i].f(stack, line_number);
-			return (EXIT_SUCCESS);
+			return;
 		}
 	}
 
 	ln = line_number;
 	fprintf(stderr, "L%d: unknown instruction %s\n", ln, common.tokens[0]);
-	exit(EXIT_FAILURE);
-
+	quit(stack, EXIT_FAILURE);
 }

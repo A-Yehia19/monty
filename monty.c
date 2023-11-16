@@ -35,6 +35,9 @@ int main(int argc, char **argv)
 		common.tokens[common.tokens_len] = strtok(line, " \n\t");
 		while (common.tokens[common.tokens_len] != NULL)
 		{
+			if (common.tokens[common.tokens_len][0] == '#')
+				break;
+
 			common.tokens_len++;
 			common.tokens[common.tokens_len] = strtok(NULL, " \n\t");
 		}
