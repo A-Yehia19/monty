@@ -33,5 +33,4 @@ void push(stack_t **stack, unsigned int line_number)
 		(*stack)->prev = new_node;
 	}
 	*stack = new_node;
-	common.stack_len++;
 }

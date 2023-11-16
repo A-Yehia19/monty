@@ -6,11 +6,7 @@
  * @line_number: line number
  * Return: NONE
  */
-void nop(stack_t **stack, unsigned int line_number)
+void nop(__attribute__((unused)) stack_t **stack, unsigned int line_number)
 {
-	return;
-
-	/* overcome unused attribute warning */
-	stack = stack;
 	line_number = line_number;
 }

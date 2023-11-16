@@ -43,7 +43,6 @@ typedef struct instruction_s
  * @type: type of data structure 0: stack, 1: queue
  * @tokens: tokens
  * @tokens_len: length of tokens
- * @stack_len: length of stack
  * @file: file
  * Description: shared data acroos all files
  */
@@ -52,7 +51,6 @@ typedef struct shared_s
 	int type;
 	char *tokens[BUFSIZ];
 	unsigned int tokens_len;
-	unsigned int stack_len;
 	FILE *file;
 	char *line;
 } shared;
@@ -61,8 +59,6 @@ shared common;
 
 
 
-void excute_command(int line_number, stack_t **stack);
-void free_stack(stack_t **stack);
 void set_queue(stack_t **stack, unsigned int line_number);
 void set_stack(stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number);
@@ -73,6 +69,8 @@ void swap(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
 
+void excute_command(int line_number, stack_t **stack);
+void free_stack(stack_t **stack);
 int is_number(char *str);
 void quit(stack_t **stack, int exit_code);
 
