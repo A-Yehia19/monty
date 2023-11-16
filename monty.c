@@ -18,14 +18,14 @@ int main(int argc, char **argv)
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
-		quit(&stack, EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	}
 
 	common.file = fopen(argv[1], "r");
 	if (common.file == NULL)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
-		quit(&stack, EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	}
 
 	while (getline(&(common.line), &len, common.file) != -1)
@@ -44,6 +44,8 @@ int main(int argc, char **argv)
 		excute_command(line_number, &stack);
 		common.tokens_len = 0;
 	}
-	quit(&stack, EXIT_SUCCESS);
+	free_stack(&stack);
+	free(common.tokens[0]);
+	fclose(common.file);
 	return (EXIT_SUCCESS);
 }

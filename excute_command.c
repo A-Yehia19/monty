@@ -36,5 +36,5 @@ void excute_command(int line_number, stack_t **stack)
 
 	ln = line_number;
 	fprintf(stderr, "L%d: unknown instruction %s\n", ln, common.tokens[0]);
-	quit(stack, EXIT_FAILURE);
+	exit(EXIT_FAILURE);
 }

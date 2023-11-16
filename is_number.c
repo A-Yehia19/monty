@@ -7,15 +7,11 @@
  */
 int is_number(char *str)
 {
-	int i;
+	int num;
 
-	for (i = 0; str[i]; i++)
-	{
-		if (i == 0 && str[i] == '-')
-			continue;
-
-		if (!isdigit(str[i]))
-			return (0);
-	}
-	return (1);
+	num = atoi(str);
+	if (num == 0 && strcmp(str, "0") != 0)
+		return (0);
+	else
+		return (1);
 }
