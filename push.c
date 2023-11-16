@@ -9,16 +9,8 @@
 void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new_node;
-	int num;
 
-	if (common.tokens[1] == NULL)
-	{
-		fprintf(stderr, "L%d: usage: push integer\n", line_number);
-		exit(EXIT_FAILURE);
-	}
-
-	num = atoi(common.tokens[1]);
-	if (num == 0 && strcmp(common.tokens[1], "0") != 0)
+	if (common.tokens[1] == NULL || is_number(common.tokens[1]) == 0)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
@@ -31,7 +23,7 @@ void push(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	new_node->n = num;
+	new_node->n = atoi(common.tokens[1]);
 	new_node->prev = NULL;
 	new_node->next = NULL;
 

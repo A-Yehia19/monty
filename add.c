@@ -8,7 +8,7 @@
  */
 void add(stack_t **stack, unsigned int line_number)
 {
-    printf("adding on stack\n");
-    stack = stack;
-    line_number = line_number;
+	printf("adding on stack\n");
+	stack = stack;
+	line_number = line_number;
 }

@@ -42,7 +42,9 @@ typedef struct instruction_s
  * struct shared_s - shared data acroos all files
  * @type: type of data structure 0: stack, 1: queue
  * @tokens: tokens
- * 
+ * @tokens_len: length of tokens
+ * @stack_len: length of stack
+ * Description: shared data acroos all files
  */
 typedef struct shared_s
 {
@@ -68,5 +70,6 @@ void swap(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
 
+int is_number(char *str);
 
 #endif

@@ -8,7 +8,7 @@
  */
 void pop(stack_t **stack, unsigned int line_number)
 {
-    printf("pop top of stack\n");
-    stack = stack;
-    line_number = line_number;
+	printf("pop top of stack\n");
+	stack = stack;
+	line_number = line_number;
 }

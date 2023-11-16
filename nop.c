@@ -8,9 +8,9 @@
  */
 void nop(stack_t **stack, unsigned int line_number)
 {
-    return;
-    
-    /* overcome unused attribute warning */
-    stack = stack;
-    line_number = line_number;
+	return;
+
+	/* overcome unused attribute warning */
+	stack = stack;
+	line_number = line_number;
 }
