@@ -28,16 +28,16 @@ int main(int argc, char **argv)
 		quit(&stack, EXIT_FAILURE);
 	}
 
-	while (getline(&line, &len, common.file) != -1)
+	while (getline(&(common.line), &len, common.file) != -1)
 	{
 		line_number++;
+		line = common.line;
 		common.tokens[common.tokens_len] = strtok(line, " \n\t");
 		while (common.tokens[common.tokens_len] != NULL)
 		{
 			common.tokens_len++;
 			common.tokens[common.tokens_len] = strtok(NULL, " \n\t");
 		}
-		free(line);
 		excute_command(line_number, &stack);
 		common.tokens_len = 0;
 	}

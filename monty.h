@@ -54,6 +54,7 @@ typedef struct shared_s
 	unsigned int tokens_len;
 	unsigned int stack_len;
 	FILE *file;
+	char *line;
 } shared;
 
 shared common;

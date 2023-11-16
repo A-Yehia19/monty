@@ -10,5 +10,6 @@ void quit(stack_t **stack, int exit_code)
 {
 	free_stack(stack);
 	fclose(common.file);
+	free(common.line);
 	exit(exit_code);
 }
