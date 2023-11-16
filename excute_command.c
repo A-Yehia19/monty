@@ -10,16 +10,10 @@ void excute_command(int line_number, stack_t **stack)
 {
 	int i, ln;
 	instruction_t opcodes[] = {
-		{"push", push},
-		{"pall", pall},
-		{"pint", pint},
-		{"pop", pop},
-		{"swap", swap},
-		{"add", add},
-		{"nop", nop},
-		{"queue", set_queue},
-		{"stack", set_stack},
-		{NULL, NULL}
+		{"push", push}, {"pall", pall}, {"pint", pint}, {"pop", pop},
+		{"swap", swap}, {"add", add}, {"nop", nop}, {"sub", sub},
+		{"div", _div}, {"mul", mul}, {"mod", mod}, {"pchar", pchar},
+		{"pstr", pstr}, {"rotl", rotl},	{"rotr", rotr}, {NULL, NULL}
 	};
 
 	if (common.tokens_len == 0)
