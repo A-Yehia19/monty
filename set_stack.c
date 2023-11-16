@@ -8,7 +8,7 @@
  */
 void set_stack(stack_t **stack, unsigned int line_number)
 {
-	common.type = 0;
+	common.type = STACK;
 	return;
 
 	/* overcome unused attribute warning */

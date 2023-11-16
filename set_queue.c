@@ -8,7 +8,7 @@
  */
 void set_queue(stack_t **stack, unsigned int line_number)
 {
-	common.type = 1;
+	common.type = QUEUE;
 	return;
 
 	/* overcome unused attribute warning */

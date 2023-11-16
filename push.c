@@ -8,7 +8,7 @@
  */
 void push(stack_t **stack, unsigned int line_number)
 {
-	stack_t *new_node;
+	stack_t *new_node = NULL, *last = *stack;
 
 	if (common.tokens[1] == NULL || !is_number(common.tokens[1]))
 	{
@@ -27,10 +27,25 @@ void push(stack_t **stack, unsigned int line_number)
 	new_node->prev = NULL;
 	new_node->next = NULL;
 
-	if (*stack != NULL)
+	if (common.type == QUEUE)
 	{
-		new_node->next = *stack;
-		(*stack)->prev = new_node;
+		while (last->next != NULL)
+			last = last->next;
+		if (*stack != NULL)
+		{
+			new_node->prev = last;
+			last->next = new_node;
+		}
+		else
+			*stack = new_node;
 	}
-	*stack = new_node;
+	else
+	{
+		if (*stack != NULL)
+		{
+			new_node->next = *stack;
+			(*stack)->prev = new_node;
+		}
+		*stack = new_node;
+	}
 }
