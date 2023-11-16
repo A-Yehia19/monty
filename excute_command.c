@@ -22,7 +22,7 @@ void excute_command(int line_number, stack_t **stack)
 		{NULL, NULL}
 	};
 
-	if (common.tokens_len == 0 || common.tokens[0][0] == '#')
+	if (common.tokens_len == 0)
 		return;
 
 	for (i = 0; opcodes[i].opcode; i++)
