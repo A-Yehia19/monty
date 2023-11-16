@@ -13,6 +13,7 @@ void push(stack_t **stack, unsigned int line_number)
 	if (common.tokens[1] == NULL || !is_number(common.tokens[1]))
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		exit(EXIT_FAILURE);
 		quit(stack, EXIT_FAILURE);
 	}
 
@@ -20,6 +21,7 @@ void push(stack_t **stack, unsigned int line_number)
 	if (new_node == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
+		exit(EXIT_FAILURE);
 		quit(stack, EXIT_FAILURE);
 	}
 
