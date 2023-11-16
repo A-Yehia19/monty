@@ -6,9 +6,13 @@
  * @line_number: line number
  * Return: NONE
  */
-void pall(stack_t **stack, unsigned int line_number)
+void pall(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 {
-    printf("printing stack\n");
-    stack = stack;
-    line_number = line_number;
+    stack_t *pointer = *stack;
+
+    while (pointer != NULL)
+    {
+        printf("%d\n", pointer->n);
+        pointer = pointer->next;
+    }
 }

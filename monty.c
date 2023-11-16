@@ -1,6 +1,6 @@
 #include "monty.h"
 
-shared common = {0, {NULL}, 0};
+shared common = {0, {NULL}, 0, 0};
 
 /**
  * main -

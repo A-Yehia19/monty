@@ -49,6 +49,7 @@ typedef struct shared_s
 	int type;
 	char *tokens[BUFSIZ];
 	unsigned int tokens_len;
+	unsigned int stack_len;
 } shared;
 
 extern shared common;
