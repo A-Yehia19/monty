@@ -44,8 +44,6 @@ int main(int argc, char **argv)
 		excute_command(line_number, &stack);
 		common.tokens_len = 0;
 	}
-	free_stack(&stack);
-	free(common.tokens[0]);
-	fclose(common.file);
+	quit(&stack, EXIT_SUCCESS);
 	return (EXIT_SUCCESS);
 }
