@@ -25,7 +25,7 @@ int excute_command(int line_number, stack_t **stack)
 	if (common.tokens_len == 0 || common.tokens[0][0] == '#')
 		return (EXIT_FAILURE);
 
-	for (i=0; opcodes[i].opcode; i++)
+	for (i = 0; opcodes[i].opcode; i++)
 	{
 		if (strcmp(common.tokens[0], opcodes[i].opcode) == 0)
 		{

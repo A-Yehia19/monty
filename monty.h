@@ -54,7 +54,7 @@ typedef struct shared_s
 	unsigned int stack_len;
 } shared;
 
-extern shared common;
+shared common;
 
 
 
