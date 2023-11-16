@@ -8,7 +8,7 @@
  */
 int excute_command(int line_number, stack_t **stack)
 {
-	int i;
+	int i, ln;
 	instruction_t opcodes[] = {
 		{"push", push},
 		{"pall", pall},
@@ -24,20 +24,18 @@ int excute_command(int line_number, stack_t **stack)
 
 	if (common.tokens_len == 0 || common.tokens[0][0] == '#')
 		return (EXIT_FAILURE);
-	else
-	{
-		i = 0;
-		while (opcodes[i].opcode)
-		{
-			if (strcmp(common.tokens[0], opcodes[i].opcode) == 0)
-			{
-				opcodes[i].f(stack, line_number);
-				return (EXIT_SUCCESS);
-			}
-			i++;
-		}
 
-		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, common.tokens[0]);
-		exit (EXIT_FAILURE);
+	for (i=0; opcodes[i].opcode; i++)
+	{
+		if (strcmp(common.tokens[0], opcodes[i].opcode) == 0)
+		{
+			opcodes[i].f(stack, line_number);
+			return (EXIT_SUCCESS);
+		}
 	}
+
+	ln = line_number;
+	fprintf(stderr, "L%d: unknown instruction %s\n", ln, common.tokens[0]);
+	exit(EXIT_FAILURE);
+
 }

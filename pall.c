@@ -8,11 +8,11 @@
  */
 void pall(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 {
-    stack_t *pointer = *stack;
+	stack_t *pointer = *stack;
 
-    while (pointer != NULL)
-    {
-        printf("%d\n", pointer->n);
-        pointer = pointer->next;
-    }
+	while (pointer != NULL)
+	{
+		printf("%d\n", pointer->n);
+		pointer = pointer->next;
+	}
 }
