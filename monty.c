@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * main -
+ * main - entry point
  * @argc: number of arguments
  * @argv: arguments
  * Return: EXIT_SUCCESS on success.
