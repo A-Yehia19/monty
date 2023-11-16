@@ -3,7 +3,7 @@
 /**
  * is_number - check if string is a number
  * @str: string
- * Return: 0 if true, 1 if false
+ * Return: 1 if true, 0 if false
  */
 int is_number(char *str)
 {

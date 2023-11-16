@@ -10,7 +10,7 @@ void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new_node;
 
-	if (common.tokens[1] == NULL || is_number(common.tokens[1]) == 0)
+	if (common.tokens[1] == NULL || !is_number(common.tokens[1]))
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);

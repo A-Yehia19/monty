@@ -6,6 +6,6 @@
     "code-runner.saveFileBeforeRun": true,
     "git.enableSmartCommit": true,
     "code-runner.executorMap": {
-        "c": "cd $dir && gcc -Wall -pedantic -Werror -Wextra -std=gnu89 *.c -o monty && ./monty tests/00.m"
+        "c": "cd $dir && gcc -Wall -pedantic -Werror -Wextra -std=gnu89 *.c -o monty && ./monty tests/00.m && rm monty.exe",
     }
 }
